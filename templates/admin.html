@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block title %}Admin Dashboard{% endblock %} {%
+block meta_extra %}<meta name="robots" content="noindex, nofollow" />{% endblock
+%} {% block content %}
+<div class="admin-top">
+  <h1>Admin Dashboard</h1>
+  <form method="POST" action="{{ url_for('logout') }}">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}" />
+    <button type="submit" class="btn btn-outline">Log out</button>
+  </form>
+</div>
+
+<section class="admin-block">
+  <h2>Add a project</h2>
+  <form
+    method="POST"
+    action="{{ url_for('add_project') }}"
+    class="contact-form"
+  >
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}" />
+
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required maxlength="120" />
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="tech">Tech used (comma separated)</label>
+    <input
+      type="text"
+      id="tech"
+      name="tech"
+      placeholder="Python, Flask, SQLite"
+      required
+      maxlength="200"
+    />
+
+    <label for="github_url">GitHub link (optional)</label>
+    <input type="url" id="github_url" name="github_url" maxlength="300" />
+
+    <label for="live_url">Live demo link (optional)</label>
+    <input type="url" id="live_url" name="live_url" maxlength="300" />
+
+    <button type="submit" class="btn">Add project</button>
+  </form>
+</section>
+
+<section class="admin-block">
+  <h2>Projects ({{ projects|length }})</h2>
+  {% for project in projects %}
+  <div class="admin-row">
+    <div>
+      <strong>{{ project.title }}</strong>
+      <span class="muted">{{ project.tech }}</span>
+    </div>
+    <form
+      method="POST"
+      action="{{ url_for('delete_project', project_id=project.id) }}"
+      onsubmit="return confirm('Delete this project?');"
+    >
+      <input type="hidden" name="csrf" value="{{ csrf_token() }}" />
+      <button type="submit" class="btn-danger">Delete</button>
+    </form>
+  </div>
+  {% else %}
+  <p class="muted">No projects yet.</p>
+  {% endfor %}
+</section>
+
+<section class="admin-block">
+  <h2>Messages ({{ messages|length }})</h2>
+  {% for m in messages %}
+  <div class="message-card">
+    <div class="admin-row">
+      <div>
+        <strong>{{ m.name }}</strong>
+        <a href="mailto:{{ m.email }}">{{ m.email }}</a>
+        <span class="muted"
+          >{{ m.created_at.strftime('%d %b %Y, %H:%M') }} UTC</span
+        >
+      </div>
+      <form
+        method="POST"
+        action="{{ url_for('delete_message', message_id=m.id) }}"
+        onsubmit="return confirm('Delete this message?');"
+      >
+        <input type="hidden" name="csrf" value="{{ csrf_token() }}" />
+        <button type="submit" class="btn-danger">Delete</button>
+      </form>
+    </div>
+    <p>{{ m.body }}</p>
+  </div>
+  {% else %}
+  <p class="muted">No messages yet.</p>
+  {% endfor %}
+</section>
+{% endblock %}

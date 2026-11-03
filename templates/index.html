@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Enock Kipngeno Nato | Software
+Developer{% endblock %} {% block content %}
+<section class="hero">
+  <p class="eyebrow">Hello, I'm</p>
+  <h1>Enock Kipngeno Nato</h1>
+  <p class="tagline">
+    Software developer building web apps with Python and Flask.
+  </p>
+  <div class="hero-buttons">
+    <a href="{{ url_for('projects') }}" class="btn">View my work</a>
+    <a href="{{ url_for('contact') }}" class="btn btn-outline">Contact me</a>
+  </div>
+</section>
+
+<section class="intro">
+  <h2>A bit about me</h2>
+  <p>
+    I'm Enock Nato, a software developer who enjoys turning ideas into working
+    web applications. I build backends with Python and Flask, store data with
+    SQL, and create simple, clean interfaces.
+  </p>
+  <a href="{{ url_for('about') }}">Read more about me &rarr;</a>
+</section>
+
+<section class="skills">
+  <h2>What I work with</h2>
+  <div class="skill-list">
+    <span>Python</span>
+    <span>Flask</span>
+    <span>SQLAlchemy</span>
+    <span>SQLite</span>
+    <span>HTML &amp; CSS</span>
+    <span>Git</span>
+  </div>
+</section>
+{% endblock %}

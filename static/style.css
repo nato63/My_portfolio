@@ -1,0 +1,387 @@
+/* ===== Theme: Deep Green + Cream + Gold ===== */
+:root {
+  --green-900: #0a2a1f;
+  --green-800: #0f3d2e;
+  --green-700: #17543f;
+  --cream: #faf5e9;
+  --cream-card: #fffdf6;
+  --gold: #c9a227;
+  --gold-light: #e3c25f;
+  --text: #1f2a24;
+  --muted: #5f6b63;
+  --border: #e6dcc3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--green-800);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--green-700);
+}
+a:hover {
+  color: var(--gold);
+}
+
+/* ===== Navigation ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--green-800);
+  border-bottom: 3px solid var(--gold);
+}
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+nav a:hover {
+  color: var(--gold-light);
+}
+nav .logo {
+  font-weight: bold;
+  margin-left: 0;
+  color: var(--gold-light);
+  letter-spacing: 0.5px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: var(--green-900);
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--green-900);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--green-800);
+  border-color: var(--green-800);
+}
+.btn-outline:hover {
+  background: var(--green-800);
+  border-color: var(--green-800);
+  color: var(--cream);
+}
+
+/* ===== Home ===== */
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  background: var(--green-800);
+  border-radius: 12px;
+  border-bottom: 4px solid var(--gold);
+  margin-bottom: 1rem;
+}
+.hero .eyebrow {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+}
+.hero h1 {
+  color: var(--cream);
+  font-size: 2.8rem;
+  margin: 0.25rem 0 1rem;
+}
+.hero .tagline {
+  color: #d9e4dc;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero .btn-outline {
+  color: var(--cream);
+  border-color: var(--gold-light);
+}
+.hero .btn-outline:hover {
+  background: var(--gold-light);
+  color: var(--green-900);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.intro,
+.skills {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+.intro h2,
+.skills h2 {
+  margin-bottom: 0.75rem;
+}
+.intro p {
+  margin-bottom: 0.75rem;
+}
+.intro a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== Skill pills (home, about, projects) ===== */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.skill-list span {
+  background: #f3e9c4;
+  color: var(--green-800);
+  border: 1px solid var(--gold);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+}
+
+/* ===== About ===== */
+.about-header {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+.about-header h1 {
+  font-size: 2.4rem;
+}
+.about-header .tagline {
+  margin-top: 0.5rem;
+}
+
+.about-block {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+.about-block h2 {
+  margin-bottom: 0.75rem;
+}
+
+.timeline {
+  list-style: none;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+}
+.timeline li {
+  margin-bottom: 1.25rem;
+}
+.timeline strong {
+  display: block;
+  color: var(--green-800);
+}
+.timeline span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Projects ===== */
+.projects-header {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+.projects-header h1 {
+  font-size: 2.4rem;
+}
+.projects-header .tagline {
+  margin-top: 0.5rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--cream-card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 61, 46, 0.15);
+}
+.project-card h2 {
+  font-size: 1.25rem;
+}
+
+.project-links {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+}
+.project-links a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--green-700);
+}
+.project-links a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 2rem;
+}
+
+/* ===== Contact ===== */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact h1 {
+  text-align: center;
+}
+.contact .tagline {
+  text-align: center;
+  margin: 0.5rem 0 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-form label {
+  font-weight: 600;
+  color: var(--green-800);
+  margin-top: 0.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--cream-card);
+  border-radius: 6px;
+  font: inherit;
+  color: var(--text);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--gold);
+  border-color: transparent;
+}
+.contact-form .btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+.contact-links {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.contact-links ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+.contact-links li {
+  margin-bottom: 0.3rem;
+}
+
+/* ===== Flash messages ===== */
+.flash {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+.flash-success {
+  background: #e3f1e6;
+  color: var(--green-800);
+  border-color: var(--green-700);
+}
+.flash-error {
+  background: #fbeaea;
+  color: #8a1f1f;
+  border-color: #c0392b;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: var(--green-900);
+  color: var(--gold-light);
+  border-top: 3px solid var(--gold);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  nav {
+    padding: 1rem;
+    justify-content: center;
+  }
+  nav a {
+    margin: 0 0.6rem;
+  }
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+  .hero {
+    padding: 3rem 1rem 2rem;
+  }
+}

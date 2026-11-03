@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block title %}Contact Enock Kipngeno Nato |
+Software Developer{% endblock %} {% block description %}Get in touch with Enock
+Kipngeno Nato for projects, collaborations or opportunities.{% endblock %} {%
+block content %}
+<section class="contact">
+  <h1>Contact Me</h1>
+  <p class="tagline">
+    Have a project or opportunity in mind? Send me a message.
+  </p>
+
+  <form method="POST" action="{{ url_for('contact') }}" class="contact-form">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value="{{ name or '' }}"
+      required
+      maxlength="100"
+    />
+
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value="{{ email or '' }}"
+      required
+      maxlength="120"
+    />
+
+    <label for="body">Message</label>
+    <textarea id="body" name="body" rows="6" required maxlength="2000">
+{{ body or '' }}</textarea
+    >
+
+    <div class="hp">
+      <label for="website">Leave this empty</label>
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <button type="submit" class="btn">Send message</button>
+  </form>
+
+  <div class="contact-links">
+    <p>Or find me here:</p>
+    <ul>
+      <li>
+        <a href="https://github.com/nato63" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://linkedin.com/in/your-username"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

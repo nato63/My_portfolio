@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %}Enock Kipngeno Nato | Software Developer{% endblock %}
+    </title>
+    <meta
+      name="description"
+      content="{% block description %}Enock Kipngeno Nato is a software developer building web apps with Python and Flask. View projects and get in touch.{% endblock %}"
+    />
+    <meta name="author" content="Enock Kipngeno Nato" />
+
+    <!-- Open Graph (link previews) -->
+    <meta
+      property="og:title"
+      content="Enock Kipngeno Nato | Software Developer"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Enock Kipngeno Nato, software developer."
+    />
+    <meta property="og:type" content="website" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('home') }}" class="logo">Enock Kipngeno Nato</a>
+      <div>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('projects') }}">Projects</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% for
+      category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endwith %} {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Enock Kipngeno Nato</p>
+    </footer>
+  </body>
+</html>
