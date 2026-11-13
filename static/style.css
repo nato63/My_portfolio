@@ -180,6 +180,19 @@ main {
   border-radius: 999px;
   font-size: 0.92rem;
 }
+/* ====picture====*/
+.picture {
+  text-align: center;
+  margin: 30px 0;
+}
+.picture img {
+  width: 300px;
+  height: 300px;
+  border-radius: 40%;
+  object-fit: cover;
+  border: 5px solid #084311;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
 /* ===== About ===== */
 .about-header {
@@ -359,14 +372,85 @@ main {
   border-color: #c0392b;
 }
 
-/* ===== Footer ===== */
-footer {
+/* =========================================
+   SITE FOOTER STYLES
+   ========================================= */
+
+.site-footer {
+  background-color: #1a3631; /* Dark green to match your header */
+  color: #e2e8f0; /* Light gray text */
+  padding: 50px 20px 20px; /* Space inside the footer */
+  margin-top: 60px; /* Pushes footer away from main content */
+  font-family: inherit; /* Uses your site's font */
+}
+
+/* The 3-column layout */
+.footer-container {
+  max-width: 1000px; /* Keeps it aligned with your main content */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive columns */
+  gap: 40px; /* Space between columns */
+  padding-bottom: 40px;
+}
+
+/* Column Headings */
+.footer-col h3 {
+  color: #eab308; /* Gold/yellow color matching your "View my work" button */
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Text and Links */
+.footer-col p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.footer-col ul {
+  list-style: none; /* Removes the bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect for links */
+.footer-col ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
   text-align: center;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  background: var(--green-900);
-  color: var(--gold-light);
-  border-top: 3px solid var(--gold);
+  border-top: 1px solid #2d4d46; /* Subtle line separating the bottom */
+  padding-top: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Mobile adjustments (makes it look good on phones) */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stacks columns on small screens */
+    text-align: center;
+  }
 }
 
 /* ===== Mobile ===== */
